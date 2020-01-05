@@ -1,0 +1,13 @@
+
+[
+	{
+		"question": "list the contents of the 'cloud_user' home directory",
+		"answer":   "ls /home/cloud_user"
+	},
+	{
+		"question": "display the basic vitals for the cloud_user account",
+		"answer":   "id cloud_user"
+	}
+]
+
+
