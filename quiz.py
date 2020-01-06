@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     while len(questions) > 0:
         q = questions.pop(randint(0, len(questions)-1))
-        response = input(q['question']+"\n~# ")
+        response = input(q['prompt']+"\n~# ")
         if response == q['answer']:
             correct += 1
 

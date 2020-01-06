@@ -1,12 +1,199 @@
 
 [
 	{
-		"question": "list the contents of the 'cloud_user' home directory",
-		"answer":   "ls /home/cloud_user"
+		"prompt": "List the contents of the 'cloud_user' home directory.",
+		"answer":   "ls /home/cloud_user",
+		"objective": "Shell Basics"
 	},
 	{
-		"question": "display the basic vitals for the cloud_user account",
-		"answer":   "id cloud_user"
+		"prompt": "Display the basic vitals for the 'cloud_user' account.",
+		"answer":   "id cloud_user",
+		"objective": "User and Group Management"
+	},
+	{
+		"prompt": "Add the physical volume /dev/xvdg1 to LVM.",
+		"answer": "pvcreate /dev/xvdg1",
+		"objective": "Disks and Partitioning"
+	},
+	{
+		"prompt": "List LVM logical volumes.",
+		"answer": "pvscan",
+		"objective": "Disks and Partitioning"
+	},
+	{
+		"prompt": "Launch the GPT partitioning tool to edit partitions on /dev/xvda.",
+		"answer": "gdisk /dev/xvda",
+		"objective": "Disks and Partitioning"
+	},
+	{
+		"prompt": "Add user 'franklin' with secondary membership in the group 'webadmins'.",
+		"answer": "useradd -G webadmins franklin",
+		"objective": "User and Group Management"
+	},
+	{
+		"prompt": "Copy SSH signature to remote server 'bastion' for so you can log in as its 'admin' user.",
+		"answer": "ssh-copy-id admin@bastion",
+		"objective": "SSH"
+	},
+	{
+		"prompt": "Start editing the sudoers file.",
+		"answer": "visudo",
+		"objective": "User and Group Management"
+	},
+	{
+		"prompt": "Launch the interactive text-mode tool for configuring LDAP.",
+		"answer": "authconfig-tui",
+		"objective": "User and Group Management"
+	},
+	{
+		"prompt": "Create a compressed archive of big.log called big.log.tar.gz.",
+		"answer": "tar czf big.log.tar.gz big.log",
+		"objective": "File Management"
+	},
+	{
+		"prompt": "Create a compressed archive of big.log called big.log.tar.bz2.",
+		"answer": "tar cjf big.log.tar.bz2 big.log",
+		"objective": "File Management"
+	},
+	{
+		"prompt": "Name the boot target that interrupts initrd without mounting anything.",
+		"answer": "rd.break",
+		"objective": "Booting"
+	},
+	{
+		"prompt": "Name the boot target that mounts the system disk and nothing else.",
+		"answer": "emergency",
+		"objective": "Booting"
+	},
+	{
+		"prompt": "Name the boot target that resembles the old 'single user mode' that mounts disks and starts some services.",
+		"answer": "rescue",
+		"objective": "Booting"
+	},
+	{
+		"prompt": "Name the grub command that lists disks.",
+		"answer": "ls",
+		"objective": "Booting"
+	},
+	{
+		"prompt": "Name the grub command that loads LVM access.",
+		"answer": "insmod lvm",
+		"objective": "Booting"
+	},
+	{
+		"prompt": "Name the grub command that finds a file named /etc/example.txt.",
+		"answer": "search.file /etc/example.txt",
+		"objective": "Booting"
+	},
+	{
+		"prompt": "What program can you use to monitor running processes?",
+		"answer": "top",
+		"objective": "Process Management"
+	},
+	{
+		"prompt": "What program reports a snapshot of running processes?",
+		"answer": "ps",
+		"objective": "Process Management"
+	},
+	{
+		"prompt": "What program combines ps and grep?",
+		"answer": "pgrep",
+		"objective": "Process Management"
+	},
+	{
+		"prompt": "What program do you use to stop/start/kill processes?",
+		"answer": "kill",
+		"objective": "Process Management"
+	},
+	{
+		"prompt": "Type the command to end pid 44995 immediately.",
+		"answer": "kill -s SIGKILL 44995",
+		"objective": "Process Management"
+	},
+	{
+		"prompt": "Type the command to tell pid 9328 to end cleanly.",
+		"answer": "kill -s SIGTERM 9328",
+		"objective": "Process Management"
+	},
+	{
+		"prompt": "Type the command to interrupt/stop pid 3945 in the same way CTRL+C would.",
+		"answer": "kill -s SIGINT 3945",
+		"objective": "Process Management"
+	},
+	{
+		"prompt": "Type the command to send a hangup signal to pid 9999.",
+		"answer": "kill -s SIGHUP 9999",
+		"objective": "Process Management"
+	},
+	{
+		"prompt": "Type the command to stop pid 9999 in the same way CTRL+Z in a shell would, stopping it so it can be resumed later.",
+		"answer": "kill -s SIGSTOP 9999",
+		"objective": "Process Management"
+	},
+	{
+		"prompt": "Type the command to resume the stopped pid 9999.",
+		"answer": "kill -s SIGCONT 9999",
+		"objective": "Process Management"
+	},
+	{
+		"prompt": "Name the subsystem that controls what services write to what logs.",
+		"answer": "rsyslog",
+		"objective": "Logging"
+	},
+	{
+		"prompt": "What file configures rsyslog?",
+		"answer": "/etc/rsyslog.conf",
+		"objective": "Logging"
+	},
+	{
+		"prompt": "Type the command to show all messages in the journald journal that are 'error' priority and occurred since the last boot. (use numeric log level)",
+		"answer": "journalctl -p 3 -b",
+		"objective": "Logging"
+	},
+	{
+		"prompt": "Type the command to show all warning messages and above for the apache webservice since yesterday.",
+		"answer": "journalctl -p 4 -u httpd.service --since=yesterday",
+		"objective": "Logging"
+	},
+	{
+		"prompt": "Name the utility for viewing and manipulating grub settings.",
+		"answer": "grubby",
+		"objective": "Booting"
+	},
+	{
+		"prompt": "Name the virtualization service.",
+		"answer": "libvirtd",
+		"objective": "Virtualization"
+	},
+	{
+		"prompt": "What program manages virtual machines?",
+		"answer": "virt-manager",
+		"objective": "Virtualization"
+	},
+	{
+		"prompt": "You've just finished changing partition information. What command causes the kernel to look for this new information and make it live?",
+		"answer": "partprobe",
+		"objective": "Disks and Partitioning"
+	},
+	{
+		"prompt": "What is the theoretical maximum of an XFS partition in RHEL?",
+		"answer": "16EiB",
+		"objective": "Disks and Partitioning"
+	},
+	{
+		"prompt": "Provide the command to print the block device ids.",
+		"answer": "blkid",
+		"objective": "Disks and Partitioning"
+	},
+	{
+		"prompt": "Label an XFS disk 'Extras', the device is /dev/xvdb",
+		"answer": "xfs_admin -L \"Extras\" /dev/xvdb",
+		"objective": "Disks and Partitioning"
+	},
+	{
+		"prompt": "Type a line for the fstab that takes the xfs volume /dev/xvdc3 and mounts it to /opt/jboss, uses the default options, does not use the obsolete dump backups, and gets a filesystem check AFTER the root partition if an unsafe reboot ever occurs. Separate fields with one space.",
+		"answer": "/dev/xvdc3 /opt/jboss xfs defaults 0 2",
+		"objective": "Disks and Partitioning"
 	}
 ]
 
